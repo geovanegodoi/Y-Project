@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/PGDataTransfer/obj
+/PGDataTransfer.Core/obj
+/PGDataTransfer.Service/bin
+/PGDataTransfer.Service/obj
+/PGDataTransfer.Test/bin
+/PGDataTransfer.Test/obj

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGDataTransfer.Test", "PGDataTransfer.Test\PGDataTransfer.Test.csproj", "{00E605EF-7A70-4CF4-800F-3FBC4DD1F7B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGDataTransfer.Core", "PGDataTransfer.Core\PGDataTransfer.Core.csproj", "{B0885768-8AED-4E79-BD32-7C70E4BC2B86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGDataTransfer", "PGDataTransfer\PGDataTransfer.csproj", "{6D36FD91-08A3-4904-9C72-5114ABEA23E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGDataTransfer.Service", "PGDataTransfer.Service\PGDataTransfer.Service.csproj", "{B6C3D0F3-5719-4C11-8645-715715FBF7F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00E605EF-7A70-4CF4-800F-3FBC4DD1F7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E605EF-7A70-4CF4-800F-3FBC4DD1F7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E605EF-7A70-4CF4-800F-3FBC4DD1F7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E605EF-7A70-4CF4-800F-3FBC4DD1F7B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0885768-8AED-4E79-BD32-7C70E4BC2B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0885768-8AED-4E79-BD32-7C70E4BC2B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0885768-8AED-4E79-BD32-7C70E4BC2B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0885768-8AED-4E79-BD32-7C70E4BC2B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D36FD91-08A3-4904-9C72-5114ABEA23E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D36FD91-08A3-4904-9C72-5114ABEA23E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D36FD91-08A3-4904-9C72-5114ABEA23E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D36FD91-08A3-4904-9C72-5114ABEA23E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6C3D0F3-5719-4C11-8645-715715FBF7F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6C3D0F3-5719-4C11-8645-715715FBF7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6C3D0F3-5719-4C11-8645-715715FBF7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6C3D0F3-5719-4C11-8645-715715FBF7F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
