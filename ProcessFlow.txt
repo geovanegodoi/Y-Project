@@ -1,0 +1,88 @@
+-----------------------------------------------------------------------------------------
+[1] DownloadController
+-----------------------------------------------------------------------------------------
+	[1.1] Connect FTP
+	[1.2] Get files list to download
+	[1.3] Foreach file into list
+	[1.4] Download file
+	[1.5] Check local file size match remote file size
+	[1.6] File size matches
+		[yes]
+		[1.6.1] Add a record into PG_DOWNLOAD_FILE (download_status = 1)
+		[1.6.2] Add the file into FileCollection
+		[no]
+		[1.6.3] Maximum Download attempts
+			[yes]
+			[1.6.3.1] Add a record into PG_DOWNLOAD_FILE (download_status = 0)
+			[1.6.3.2] Add a record into PG_DOWNLOAD_LOG
+		[1.6.4] Go to step [1.3]
+	[1.7] Remote files EOF
+		[no]
+		[1.7.1] Go to step [1.3]
+	[1.8] Return the FileCollection
+-----------------------------------------------------------------------------------------	
+[2] FileConverterController
+-----------------------------------------------------------------------------------------
+	[2.1] Get FileCollection
+	[2.2] Foreach file into collection
+	[2.3] Get the file header
+	[2.4] File header is Okay
+		[no]
+		[2.4.1] Maximum Converts attempts
+			[yes]
+			[2.4.1.1] Add a record into PG_DOWNLOAD_FILE (convert_status = 0)
+			[2.4.1.2] Add a record into PG_DOWNLOAD_LOG
+		[2.4.2] Go to step [2.2]
+	[2.5] Foreach single row into file
+	[2.6] Get the column by index
+	[2.7] Set the value into property by name
+	[2.8] File converted
+		[yes]
+		[2.8.1] Add the object into ObjectCollection
+		[2.8.2] Add a record into PG_DOWNLOAD_FILE (convert_status = 1)
+		[2.8.3] Add a record into PG_DOWNLOAD_FILE_DETAIL
+		[no]
+		[2.8.3] Maximum Converts attempts
+			[yes]
+			[2.8.3.1] Add a record into PG_DOWNLOAD_FILE (convert_status = 0)
+			[2.8.3.2] Add a record into PG_DOWNLOAD_LOG
+		[2.8.4] Go to step [2.2]
+	[2.9] File Collection EOF
+		[no] 
+		[2.9.1] Go to step [2.2]
+	[2.10] Return the ObjectCollection
+-----------------------------------------------------------------------------------------	
+[3] UploadDataController
+-----------------------------------------------------------------------------------------
+	[3.1] Get ObjectCollection
+	[3.2] Foreach object into collection
+	[3.3] Begin transaction
+	[3.4] Call the procedure to insert the SKD
+	[3.5] Procedure failed
+		[yes]
+		[3.5.1] Rollback transaction
+		[3.5.2] Add a record into PG_DOWNLOAD_LOG
+		[3.5.3] Go to step [3.2]
+	[3.6] Call the procedure to insert the sub-assembly
+	[3.7] Procedure failed
+		[yes]
+		[3.7.1] Rollback transaction
+		[3.7.2] Add a record into PG_DOWNLOAD_LOG
+		[3.7.3] Go to step [3.2]
+	[3.8] Call the procedure to insert the SKD packing-data
+	[3.9] Procedure failed
+		[yes]
+		[3.9.1] Rollback transaction
+		[3.9.2] Add a record into PG_DOWNLOAD_LOG
+		[3.9.3] Go to step [3.2]
+	[3.10] Call the procedure to insert the sub-assembly packing-data
+	[3.11] Procedure failed
+		[yes]
+		[3.11.1] Rollback transaction
+		[3.11.2] Add a record into PG_DOWNLOAD_LOG
+		[3.11.3] Go to step [3.2]
+	[3.12] Commit transaction
+	[3.13] ObjectCollection EOF
+		[no]
+		[3.13.1] Go to step [3.2]
+-----------------------------------------------------------------------------------------		

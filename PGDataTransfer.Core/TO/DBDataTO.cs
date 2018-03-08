@@ -1,6 +1,6 @@
 ﻿namespace PGDataTransfer.Core.TO
 {
-    public class CartonTO : BasePartTO
+    public class DBDataTO
     {
     }
 }

@@ -9,5 +9,9 @@
         public string Path { get; set; }
 
         public int Size { get; set; }
+
+        public FileHeaderTO Header { get; set; }
+
+        public FileContentTO Content { get; set; }
     }
 }

@@ -1,12 +1,15 @@
-﻿using System;
+﻿using PGDataTransfer.Core.Contracts.Controller;
+using PGDataTransfer.Core.TO;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PGDataTransfer.Controllers
 {
-    class FileController
+    public class FileController : IFileController
     {
+        public ICollection<DBDataTO> ConvertFiles(ICollection<FileTO> files)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

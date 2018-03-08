@@ -8,3 +8,7 @@
 /PGDataTransfer.Service/obj
 /PGDataTransfer.Test/bin
 /PGDataTransfer.Test/obj
+/.vs
+/PGDataTransfer/bin/Debug
+*.user
+/PGDataTransfer.Core/bin/Debug
