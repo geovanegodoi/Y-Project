@@ -7,12 +7,12 @@ namespace PGDataTransfer.BO
 {
     public class FTPConnectionBO : IFTPConnectionBO
     {
-        public void CloseConnection()
+        public void OpenConnection(OpenConnectionTO to)
         {
             throw new NotImplementedException();
         }
 
-        public FileTO DownloadFile(FileTO to)
+        public void CloseConnection()
         {
             throw new NotImplementedException();
         }
@@ -22,7 +22,7 @@ namespace PGDataTransfer.BO
             throw new NotImplementedException();
         }
 
-        public void OpenConnection(OpenConnectionTO to)
+        public FileTO DownloadFile(FileTO to)
         {
             throw new NotImplementedException();
         }
